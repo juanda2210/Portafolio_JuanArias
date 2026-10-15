@@ -80,73 +80,21 @@
                 </div>
             </div>
 
-            <!-- Panel visual -->
+            <!-- Fotografía personal -->
             <div class="hero-visual">
-                <div class="orbit orbit-one"></div>
-                <div class="orbit orbit-two"></div>
-
-                <div class="code-card">
-                    <div class="code-header">
-                        <div class="window-dots">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                        <span>developer.java</span>
-                    </div>
-
-                    <div class="code-content">
-                        <p><span class="code-purple">public class</span>
-                            <span class="code-mint"> Developer</span> {</p>
-
-                        <p class="indent">
-                            <span class="code-purple">private</span>
-                            String <span class="code-blue">name</span>
-                            = <span class="code-orange">"APEX22"</span>;
-                        </p>
-
-                        <p class="indent">
-                            <span class="code-purple">private</span>
-                            String <span class="code-blue">mindset</span>
-                            = <span class="code-orange">"Keep building"</span>;
-                        </p>
-
-                        <br>
-
-                        <p class="indent">
-                            <span class="code-purple">public void</span>
-                            <span class="code-mint"> createFuture</span>() {
-                        </p>
-
-                        <p class="indent double-indent">
-                            learn();
-                        </p>
-
-                        <p class="indent double-indent">
-                            build();
-                        </p>
-
-                        <p class="indent double-indent">
-                            <span class="code-blue">repeat</span>();
-                        </p>
-
-                        <p class="indent">}</p>
-                        <p>}</p>
-                    </div>
-
-                    <div class="code-footer">
-                        <span>● SYSTEM ONLINE</span>
-                        <span>JAVA · WEB · AI</span>
-                    </div>
+                <div class="photo-frame">
+                    <img
+                        src="images/mi-foto.png"
+                        alt="Fotografía personal de Juan"
+                        class="profile-photo"
+                    />
+                    <div class="photo-decoration"></div>
                 </div>
 
-                <div class="floating-tag tag-top">
-                    <span>✳</span> Creativity
-                </div>
-
-                <div class="floating-tag tag-bottom">
-                    <span>⌘</span> Innovation
-                </div>
+                <span class="photo-caption">
+                    <span class="status-dot"></span>
+                    Construyendo el futuro con código
+                </span>
             </div>
         </section>
 
@@ -247,7 +195,7 @@
                             préstamos, pagos y saldos pendientes.
                         </p>
 
-                        <a href="https://github.com/" target="_blank"
+                        <a href="https://github.com/juanda2210/CrediYA_S.A.S" target="_blank"
                            rel="noopener noreferrer" class="project-link">
                             Ver repositorio <span>↗</span>
                         </a>
@@ -279,7 +227,7 @@
                             de modelos de lenguaje y servicios inteligentes.
                         </p>
 
-                        <a href="https://github.com/" target="_blank"
+                        <a href="https://github.com/KeynnerSanchez/Actividad-n8n" target="_blank"
                            rel="noopener noreferrer" class="project-link">
                             Ver repositorio <span>↗</span>
                         </a>
@@ -312,7 +260,7 @@
                             de posiciones mediante programación orientada a objetos.
                         </p>
 
-                        <a href="https://github.com/" target="_blank"
+                        <a href="https://github.com/juanda2210/actividad_TORNEO" target="_blank"
                            rel="noopener noreferrer" class="project-link">
                             Ver repositorio <span>↗</span>
                         </a>
@@ -361,17 +309,55 @@
                     en proyectos que generen impacto.
                 </p>
 
-                <a href="mailto:tu.correo@ejemplo.com"
-                   class="button button-primary">
-                    Escríbeme un correo <span>↗</span>
-                </a>
+                <div class="contact-actions">
+                    <a href="mailto:tu.correo@ejemplo.com"
+                       class="button button-primary">
+                        Escríbeme un correo <span>↗</span>
+                    </a>
+
+                    <a
+                        class="cv-download-button"
+                        href="https://docs.google.com/document/d/1tXY-Adpl7_IadETosinYbXz3iWbTWATl/edit?usp=sharing&amp;ouid=112992320391678261462&amp;rtpof=true&amp;sd=true"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span aria-hidden="true">↓</span>
+                        Descargar CV
+                    </a>
+                </div>
 
                 <div class="social-links">
-                    <a href="https://github.com/" target="_blank"
+                    <a href="https://github.com/juanda2210" target="_blank"
                        rel="noopener noreferrer">GitHub ↗</a>
 
-                    <a href="https://www.linkedin.com/" target="_blank"
+                    <a href="https://www.linkedin.com/in/juan-david-arias-patiño-708a29262/?isSelfProfile=true" target="_blank"
                        rel="noopener noreferrer">LinkedIn ↗</a>
+                </div>
+
+                <!-- Video: solo carga el reproductor cuando el usuario hace clic -->
+                <div class="contact-video">
+                    <p class="video-eyebrow">CONOCE MÁS SOBRE MÍ</p>
+                    <h3>Un poco más de mi historia</h3>
+                    <p class="video-description">
+                        Descubre más sobre mí a través de este video.
+                    </p>
+
+                    <div class="video-container" id="video-container">
+                        <button
+                            class="video-play-button"
+                            id="play-video"
+                            type="button"
+                            aria-label="Reproducir video de YouTube"
+                        >
+                            <img
+                                src="https://img.youtube.com/vi/oM90N-aqbeo/hqdefault.jpg"
+                                alt="Vista previa del video de YouTube"
+                                class="video-thumbnail"
+                            />
+                            <span class="play-icon" aria-hidden="true">▶</span>
+                            <span class="video-label">Ver video</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -386,6 +372,23 @@
 
         <span>© 2026 APEX22</span>
     </footer>
+
+
+    <script>
+        // El reproductor de YouTube solo se crea cuando la persona hace clic.
+        const playButton = document.getElementById("play-video");
+        const videoContainer = document.getElementById("video-container");
+
+        playButton.addEventListener("click", () => {
+            const iframe = document.createElement("iframe");
+            iframe.src = "https://www.youtube-nocookie.com/embed/oM90N-aqbeo?autoplay=1&rel=0";
+            iframe.title = "Video de presentación";
+            iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+            iframe.allowFullscreen = true;
+            iframe.referrerPolicy = "strict-origin-when-cross-origin";
+            videoContainer.replaceChildren(iframe);
+        });
+    </script>
 
 </body>
 </html>

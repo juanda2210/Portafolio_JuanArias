@@ -1,394 +1,282 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description"
-          content="Portafolio de desarrollador de software. Proyectos, tecnologías y soluciones digitales.">
-
-    <title>APEX22 | Desarrollador de Software</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-          rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juan David Arias Patiño — Desarrollador Backend</title>
+  <meta name="description" content="Portafolio de Juan David Arias Patiño, desarrollador backend junior: APIs REST con Java y Spring Boot, bases de datos MySQL y seguridad desde el diseño.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+  <div class="progress" id="progress"></div>
 
-    <!-- Fondo decorativo -->
-    <div class="background-glow glow-one"></div>
-    <div class="background-glow glow-two"></div>
+  <!-- Botón de idioma (esquina inferior derecha) -->
+  <button class="lang" id="langToggle" aria-label="Cambiar idioma / Change language">
+    <span data-l="es" class="on">ES</span><span data-l="en">EN</span>
+  </button>
 
-    <!-- Navegación -->
-    <header class="navbar">
-        <a href="#inicio" class="logo">
-            APEX<span>22</span><span class="logo-dot">.</span>
-        </a>
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <a href="#top" class="nav__brand">&lt;/&gt; <span>juan.arias</span></a>
+    <nav class="nav__links" id="navLinks">
+      <a href="#about" data-i18n="nav.about">Perfil</a>
+      <a href="#work" data-i18n="nav.work">Proyectos</a>
+      <a href="#stack" data-i18n="nav.stack">Stack</a>
+      <a href="#path" data-i18n="nav.path">Formación</a>
+      <a href="#contact" data-i18n="nav.contact">Contacto</a>
+    </nav>
+    <div class="nav__tools">
+      <button class="icon-btn" id="themeToggle" aria-label="Cambiar tema">◐</button>
+      <button class="icon-btn nav__burger" id="burger" aria-label="Menú">☰</button>
+    </div>
+  </header>
 
-        <nav class="nav-links">
-            <a href="#inicio">Inicio</a>
-            <a href="#sobre-mi">Sobre mí</a>
-            <a href="#proyectos">Proyectos</a>
-            <a href="#habilidades">Habilidades</a>
-            <a href="#contacto" class="nav-contact">Hablemos ↗</a>
-        </nav>
-    </header>
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__grid container">
+        <div class="hero__text">
+          <p class="tag reveal"><span class="pulse"></span> <span data-i18n="hero.tag">Disponible para nuevas oportunidades</span></p>
+          <h1 class="reveal">
+            <span data-i18n="hero.h1a">Construyo el</span> <span class="outline">backend</span><br>
+            <span data-i18n="hero.h1b">que hace funcionar</span><br>
+            <span class="typed-wrap"><span id="typed" class="accent"></span><span class="caret"></span></span>
+          </h1>
+          <p class="lead reveal" data-i18n="hero.lead">
+            Soy <strong>Juan David Arias Patiño</strong>, desarrollador backend junior de Bucaramanga, Colombia.
+            Creo APIs REST seguras con Java y Spring Boot y diseño bases de datos MySQL. <em>Build. Learn. Grow.</em>
+          </p>
+          <div class="hero__cta reveal">
+            <a href="#work" class="btn btn--primary"><span data-i18n="hero.cta1">Ver proyectos</span> <span>→</span></a>
+            <a href="#contact" class="btn btn--ghost" data-i18n="hero.cta2">Hablemos</a>
+          </div>
+          <ul class="hero__stats reveal">
+            <li><b data-count="5">0</b><span data-i18n="stat.1">proyectos<br>publicados</span></li>
+            <li><b data-count="1">0</b><span data-i18n="stat.2">certificación<br>Fortinet</span></li>
+            <li><b data-count="2">0</b><span data-i18n="stat.3">idiomas<br>(ES · EN B1)</span></li>
+          </ul>
+        </div>
 
-    <main>
+        <div class="hero__visual reveal">
+          <div class="photo" id="tilt">
+            <img src="images/retrato.png" alt="Retrato de Juan David Arias Patiño, desarrollador backend" width="1402" height="1122">
+            <div class="photo__shine"></div>
+          </div>
+          <pre class="response" aria-hidden="true"><span class="c">// GET /api/developer</span>
+<span class="k">HTTP/1.1</span> <span class="ok">200 OK</span>
+{
+  <span class="s">"name"</span>: <span class="v">"Juan David Arias"</span>,
+  <span class="s">"role"</span>: <span class="v">"Backend Jr"</span>,
+  <span class="s">"stack"</span>: [<span class="v">"Java"</span>, <span class="v">"Spring"</span>],
+  <span class="s">"status"</span>: <span class="v">"open_to_work"</span>
+}</pre>
+        </div>
+      </div>
+    </section>
 
-        <!-- Presentación -->
-        <section class="hero section" id="inicio">
+    <!-- MARQUEE -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Java</span><span>Spring Boot</span><span>Spring Security</span><span>JWT</span><span>MySQL</span><span>JPA / Hibernate</span><span>REST</span><span>Swagger</span><span>Git</span><span>Linux</span>
+        <span>Java</span><span>Spring Boot</span><span>Spring Security</span><span>JWT</span><span>MySQL</span><span>JPA / Hibernate</span><span>REST</span><span>Swagger</span><span>Git</span><span>Linux</span>
+      </div>
+    </div>
 
-            <div class="hero-content">
-                <div class="availability">
-                    <span class="status-dot"></span>
-                    Desarrollador en constante evolución
-                </div>
+    <!-- ABOUT -->
+    <section class="section container" id="about">
+      <header class="section__head reveal">
+        <span class="index">01</span>
+        <h2 data-i18n="nav.about">Perfil</h2>
+      </header>
 
-                <p class="eyebrow">HOLA, MUNDO. SOY DESARROLLADOR.</p>
+      <div class="bento">
+        <article class="card card--big reveal">
+          <h3 data-i18n="about.title">Lo que hay detrás del código</h3>
+          <p data-i18n="about.p1">Desarrollador backend junior con experiencia en Java, Spring Boot y MySQL. Construyo APIs REST con autenticación JWT, control de acceso por roles y arquitectura por capas, y diseño bases de datos con funciones, triggers y vistas.</p>
+          <p data-i18n="about.p2">Certificado en Fortinet, aplico principios de seguridad desde el diseño. Me caracterizo por el aprendizaje continuo, el trabajo en equipo y el compromiso con la calidad del código.</p>
+        </article>
 
-                <h1>
-                    Transformo ideas en
-                    <span class="gradient-text">soluciones</span>
-                    digitales.
-                </h1>
+        <article class="card reveal">
+          <span class="card__icon">⚙</span>
+          <h3 data-i18n="c1.t">APIs REST</h3>
+          <p data-i18n="c1.p">Spring Boot, JWT y roles con Spring Security, DTOs, validaciones y documentación con Swagger/OpenAPI.</p>
+        </article>
 
-                <p class="hero-description">
-                    Soy desarrollador de software apasionado por la tecnología,
-                    la programación y la creación de experiencias digitales.
-                    Construyo soluciones que combinan lógica, creatividad y propósito.
-                </p>
+        <article class="card reveal">
+          <span class="card__icon">▤</span>
+          <h3 data-i18n="c2.t">Bases de datos</h3>
+          <p data-i18n="c2.p">Modelado entidad-relación, MySQL, funciones, triggers, vistas y persistencia con JPA/Hibernate y JDBC.</p>
+        </article>
 
-                <div class="hero-buttons">
-                    <a href="#proyectos" class="button button-primary">
-                        Explorar proyectos <span>↗</span>
-                    </a>
+        <article class="card reveal">
+          <span class="card__icon">🔒</span>
+          <h3 data-i18n="c3.t">Seguridad</h3>
+          <p data-i18n="c3.p">Certificación Fortinet: autenticación fuerte, cifrado de tráfico y validación de solicitudes desde el diseño.</p>
+        </article>
 
-                    <a href="#contacto" class="button button-secondary">
-                        Contactarme
-                    </a>
-                </div>
+        <article class="card card--accent reveal">
+          <p class="quote" data-i18n="about.quote">Aprendizaje continuo, trabajo en equipo y compromiso con la calidad del código.</p>
+        </article>
+      </div>
+    </section>
 
-                <div class="hero-footer">
-                    <span><span class="mini-icon">⌘</span> Código con propósito</span>
-                    <span><span class="mini-icon">✳</span> Ideas sin límites</span>
-                </div>
-            </div>
+    <!-- WORK -->
+    <section class="section container" id="work">
+      <header class="section__head reveal">
+        <span class="index">02</span>
+        <h2 data-i18n="nav.work">Proyectos</h2>
+      </header>
 
-            <!-- Fotografía personal -->
-            <div class="hero-visual">
-                <div class="photo-frame">
-                    <img
-                        src="images/mi-foto.png"
-                        alt="Fotografía personal de Juan"
-                        class="profile-photo"
-                    />
-                    <div class="photo-decoration"></div>
-                </div>
+      <ul class="projects">
+        <li class="project reveal">
+          <a href="https://github.com/juanda2210/CoWorkHub" class="project__row" target="_blank" rel="noopener">
+            <span class="project__n">01</span>
+            <span class="project__title">CoWorkHub — API REST</span>
+            <span class="project__tags">Java · Spring Boot · JWT · MySQL</span>
+            <span class="project__arrow">↗</span>
+          </a>
+          <div class="project__detail"><div>
+            <p data-i18n="p1.d">API REST con Spring Boot para gestionar una red de espacios de coworking: sedes, salas, equipos, planes, miembros, reservas y servicios adicionales. Autenticación JWT con control de acceso por roles, validación de disponibilidad, cálculo de horas mensuales por plan, arquitectura por capas, DTOs, manejo global de excepciones y documentación con Swagger/OpenAPI.</p>
+            <div class="project__links"><a href="https://github.com/juanda2210/CoWorkHub" target="_blank" rel="noopener" data-i18n="link.code">Ver código</a></div>
+          </div></div>
+        </li>
+        <li class="project reveal">
+          <a href="https://github.com/juanda2210/CrediYA_S.A.S" class="project__row" target="_blank" rel="noopener">
+            <span class="project__n">02</span>
+            <span class="project__title">CrediYA S.A.S.</span>
+            <span class="project__tags">Java · MySQL · JDBC · Maven</span>
+            <span class="project__arrow">↗</span>
+          </a>
+          <div class="project__detail"><div>
+            <p data-i18n="p2.d">Aplicación de consola en Java para gestionar una entidad de préstamos: empleados, clientes, préstamos y pagos. Simulación de créditos, abonos, saldos, historial, detección de clientes en mora y exportación a archivos. Capas (modelos, DAOs, vistas, utilidades), consultas parametrizadas, Streams y LocalDate.</p>
+            <div class="project__links"><a href="https://github.com/juanda2210/CrediYA_S.A.S" target="_blank" rel="noopener" data-i18n="link.code">Ver código</a></div>
+          </div></div>
+        </li>
+        <li class="project reveal">
+          <a href="https://github.com/juanda2210/project_mysql2" class="project__row" target="_blank" rel="noopener">
+            <span class="project__n">03</span>
+            <span class="project__title">Eventos Premier S.A.S.</span>
+            <span class="project__tags">MySQL · SQL · Workbench</span>
+            <span class="project__arrow">↗</span>
+          </a>
+          <div class="project__detail"><div>
+            <p data-i18n="p3.d">Base de datos MySQL para digitalizar el alquiler de salones de una empresa de eventos: salones, clientes, encargados, reservas y pagos. Parte del modelo entidad-relación; incluye funciones (costo con IVA del 19 % y disponibilidad), triggers de estado y auditoría de precios, vistas para reportes y scripts de prueba.</p>
+            <div class="project__links"><a href="https://github.com/juanda2210/project_mysql2" target="_blank" rel="noopener" data-i18n="link.code">Ver código</a></div>
+          </div></div>
+        </li>
+        <li class="project reveal">
+          <a href="https://github.com/juanda2210/hotel_el_rincon_del_carmen" class="project__row" target="_blank" rel="noopener">
+            <span class="project__n">04</span>
+            <span class="project__title">Hotel El Rincón del Carmen</span>
+            <span class="project__tags">HTML · CSS · JavaScript · Web Components</span>
+            <span class="project__arrow">↗</span>
+          </a>
+          <div class="project__detail"><div>
+            <p data-i18n="p4.d">Aplicación web de reservas de hotel en JavaScript puro con Web Components. Registro e inicio de sesión con roles de cliente y administrador, búsqueda por fechas y huéspedes, validación de disponibilidad, cálculo automático de noches y total, y panel de administración de habitaciones, precios y reservas.</p>
+            <div class="project__links"><a href="https://github.com/juanda2210/hotel_el_rincon_del_carmen" target="_blank" rel="noopener" data-i18n="link.code">Ver código</a></div>
+          </div></div>
+        </li>
+        <li class="project reveal">
+          <a href="https://github.com/juanda2210/project_campus_shop" class="project__row" target="_blank" rel="noopener">
+            <span class="project__n">05</span>
+            <span class="project__title">CampusShop</span>
+            <span class="project__tags">HTML5 · CSS3 · Responsive</span>
+            <span class="project__arrow">↗</span>
+          </a>
+          <div class="project__detail"><div>
+            <p data-i18n="p5.d">Maquetación de un e-commerce universitario con HTML5 semántico y CSS3 (Mobile First): catálogo, producto, carrito, checkout, perfil e historial de compras. CSS modular (base, componentes, layout y responsive) y componentes reutilizables.</p>
+            <div class="project__links"><a href="https://github.com/juanda2210/project_campus_shop" target="_blank" rel="noopener" data-i18n="link.code">Ver código</a></div>
+          </div></div>
+        </li>
+      </ul>
+    </section>
 
-                <span class="photo-caption">
-                    <span class="status-dot"></span>
-                    Construyendo el futuro con código
-                </span>
-            </div>
-        </section>
+    <!-- STACK -->
+    <section class="section container" id="stack">
+      <header class="section__head reveal">
+        <span class="index">03</span>
+        <h2 data-i18n="nav.stack">Stack</h2>
+      </header>
 
-        <!-- Sobre mí -->
-        <section class="section about" id="sobre-mi">
-            <div class="section-heading">
-                <p class="eyebrow">01 — SOBRE MÍ</p>
-                <h2>La tecnología es mi herramienta.<br>
-                    <span class="gradient-text">Crear es mi propósito.</span>
-                </h2>
-            </div>
+      <div class="filters reveal" role="tablist">
+        <button class="chip is-active" data-filter="all" data-i18n="f.all">Todo</button>
+        <button class="chip" data-filter="backend">Backend</button>
+        <button class="chip" data-filter="data" data-i18n="f.data">Datos</button>
+        <button class="chip" data-filter="front">Frontend</button>
+        <button class="chip" data-filter="tools" data-i18n="f.tools">Herramientas</button>
+      </div>
 
-            <div class="about-grid">
-                <div class="about-text">
-                    <p>
-                        Me interesa entender cómo funcionan las cosas y convertir
-                        problemas reales en soluciones prácticas mediante el software.
-                    </p>
+      <div class="stack" id="stackGrid">
+        <div class="skill reveal" data-cat="backend"><span>Java</span><small data-i18n="s.java">POO, Streams, Collections</small></div>
+        <div class="skill reveal" data-cat="backend"><span>Spring Boot</span><small data-i18n="s.spring">APIs REST y servicios</small></div>
+        <div class="skill reveal" data-cat="backend"><span>Spring Security · JWT</span><small data-i18n="s.sec">Autenticación y roles</small></div>
+        <div class="skill reveal" data-cat="backend"><span>JPA / Hibernate · JDBC</span><small data-i18n="s.jpa">Persistencia de datos</small></div>
+        <div class="skill reveal" data-cat="backend"><span>Maven</span><small data-i18n="s.maven">Gestión de dependencias</small></div>
+        <div class="skill reveal" data-cat="backend"><span>Swagger / OpenAPI</span><small data-i18n="s.swagger">Documentación de endpoints</small></div>
+        <div class="skill reveal" data-cat="data"><span>MySQL · SQL</span><small data-i18n="s.mysql">Funciones, triggers, vistas</small></div>
+        <div class="skill reveal" data-cat="data"><span>MySQL Workbench</span><small data-i18n="s.wb">Modelado entidad-relación</small></div>
+        <div class="skill reveal" data-cat="front"><span>HTML5 · CSS3</span><small data-i18n="s.html">Semántico y Mobile First</small></div>
+        <div class="skill reveal" data-cat="front"><span>JavaScript (ES6+)</span><small>Web Components, Fetch API</small></div>
+        <div class="skill reveal" data-cat="tools"><span>Git · GitHub</span><small data-i18n="s.git">Control de versiones</small></div>
+        <div class="skill reveal" data-cat="tools"><span>Linux · IntelliJ IDEA</span><small data-i18n="s.linux">Entorno de trabajo</small></div>
+      </div>
+    </section>
 
-                    <p>
-                        Actualmente desarrollo mis habilidades en programación,
-                        diseño de aplicaciones, bases de datos e inteligencia artificial.
-                        Cada proyecto es una oportunidad para aprender algo nuevo
-                        y construir algo mejor.
-                    </p>
+    <!-- PATH -->
+    <section class="section container" id="path">
+      <header class="section__head reveal">
+        <span class="index">04</span>
+        <h2 data-i18n="nav.path">Formación</h2>
+      </header>
 
-                    <a href="#contacto" class="text-link">
-                        Construyamos algo juntos <span>↗</span>
-                    </a>
-                </div>
+      <ol class="timeline">
+        <li class="reveal">
+          <time data-i18n="t1.time">Enero 2026 — Enero 2027</time>
+          <h3 data-i18n="t1.t">Técnico laboral en Desarrollo de Software Backend</h3>
+          <p data-i18n="t1.p">Campuslands, Floridablanca. Java, Spring Boot, bases de datos y desarrollo web a través de proyectos prácticos.</p>
+        </li>
+        <li class="reveal">
+          <time data-i18n="t2.time">Certificación</time>
+          <h3>Fortinet</h3>
+          <p data-i18n="t2.p">Fundamentos de ciberseguridad para llevar seguridad al desarrollo de APIs desde el diseño.</p>
+        </li>
+        <li class="reveal">
+          <time>2010 — 2021</time>
+          <h3 data-i18n="t3.t">Bachiller Técnico Comercial</h3>
+          <p data-i18n="t3.p">Instituto Integrado Francisco Serrano Muñoz, Girón, Santander.</p>
+        </li>
+      </ol>
+    </section>
 
-                <div class="stats-grid">
-                    <article class="stat-card">
-                        <span class="stat-symbol">01</span>
-                        <h3>Aprender</h3>
-                        <p>Curiosidad constante y aprendizaje continuo.</p>
-                    </article>
+    <!-- CONTACT -->
+    <section class="section container contact" id="contact">
+      <div class="contact__box reveal">
+        <p class="tag" data-i18n="ct.tag">¿Tienes una vacante o una idea?</p>
+        <h2><span data-i18n="ct.h">Construyamos algo</span> <span class="accent" data-i18n="ct.h2">sólido</span>.</h2>
+        <div class="contact__actions">
+          <button class="btn btn--primary" id="copyMail" data-mail="juandarias2204@gmail.com">
+            <span id="copyLabel">juandarias2204@gmail.com</span> <span>⧉</span>
+          </button>
+          <a class="btn btn--ghost" href="mailto:juandarias2204@gmail.com"><span data-i18n="ct.send">Enviar correo</span> ↗</a>
+        </div>
+        <ul class="socials">
+          <li><a href="https://github.com/juanda2210" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/juan-david-arias-pati%C3%B1o-708a29262" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><span data-i18n="ct.loc">Bucaramanga, Colombia</span></li>
+        </ul>
+      </div>
+    </section>
+  </main>
 
-                    <article class="stat-card">
-                        <span class="stat-symbol">02</span>
-                        <h3>Construir</h3>
-                        <p>Ideas convertidas en proyectos funcionales.</p>
-                    </article>
+  <footer class="footer container">
+    <span>© <span id="year"></span> Juan David Arias Patiño</span>
+    <span data-i18n="ft.made">Hecho con HTML, CSS y JavaScript</span>
+    <a href="#top" data-i18n="ft.up">Volver arriba ↑</a>
+  </footer>
 
-                    <article class="stat-card">
-                        <span class="stat-symbol">03</span>
-                        <h3>Innovar</h3>
-                        <p>Explorar nuevas formas de resolver problemas.</p>
-                    </article>
-
-                    <article class="stat-card">
-                        <span class="stat-symbol">04</span>
-                        <h3>Crecer</h3>
-                        <p>Mejorar con cada línea de código.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Proyectos -->
-        <section class="section projects" id="proyectos">
-            <div class="section-heading">
-                <p class="eyebrow">02 — PORTAFOLIO</p>
-                <h2>Proyectos que hablan<br>
-                    <span class="gradient-text">por mi trabajo.</span>
-                </h2>
-                <p class="section-description">
-                    Una selección de soluciones que he construido y las tecnologías
-                    que utilizo para hacerlas realidad.
-                </p>
-            </div>
-
-            <div class="projects-grid">
-
-                <article class="project-card">
-                    <div class="project-preview preview-loans">
-                        <span class="preview-number">01 / BACKEND</span>
-                        <div class="preview-icon">₿</div>
-                        <div class="preview-lines">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                        <span class="preview-label">CREDIYA SYSTEM</span>
-                    </div>
-
-                    <div class="project-info">
-                        <div class="project-meta">
-                            <span>Java</span>
-                            <span>MySQL</span>
-                            <span>JDBC</span>
-                        </div>
-
-                        <h3>Sistema de gestión de préstamos</h3>
-
-                        <p>
-                            Aplicación para administrar clientes, empleados,
-                            préstamos, pagos y saldos pendientes.
-                        </p>
-
-                        <a href="https://github.com/juanda2210/CrediYA_S.A.S" target="_blank"
-                           rel="noopener noreferrer" class="project-link">
-                            Ver repositorio <span>↗</span>
-                        </a>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-preview preview-ai">
-                        <span class="preview-number">02 / ARTIFICIAL INTELLIGENCE</span>
-                        <div class="ai-orb">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                        <span class="preview-label">INTELLIGENCE IN MOTION</span>
-                    </div>
-
-                    <div class="project-info">
-                        <div class="project-meta">
-                            <span>Spring Boot</span>
-                            <span>AI</span>
-                            <span>APIs</span>
-                        </div>
-
-                        <h3>Aplicación inteligente</h3>
-
-                        <p>
-                            Exploración de aplicaciones web con Java, integración
-                            de modelos de lenguaje y servicios inteligentes.
-                        </p>
-
-                        <a href="https://github.com/KeynnerSanchez/Actividad-n8n" target="_blank"
-                           rel="noopener noreferrer" class="project-link">
-                            Ver repositorio <span>↗</span>
-                        </a>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-preview preview-tournament">
-                        <span class="preview-number">03 / SOFTWARE</span>
-                        <div class="tournament-symbol">🏆</div>
-                        <div class="score-display">
-                            <span>TEAM A</span>
-                            <strong>03 : 02</strong>
-                            <span>TEAM B</span>
-                        </div>
-                        <span class="preview-label">TOURNAMENT MANAGER</span>
-                    </div>
-
-                    <div class="project-info">
-                        <div class="project-meta">
-                            <span>Java</span>
-                            <span>POO</span>
-                            <span>Collections</span>
-                        </div>
-
-                        <h3>Gestor de torneos</h3>
-
-                        <p>
-                            Gestión de partidos, resultados, equipos y tablas
-                            de posiciones mediante programación orientada a objetos.
-                        </p>
-
-                        <a href="https://github.com/juanda2210/actividad_TORNEO" target="_blank"
-                           rel="noopener noreferrer" class="project-link">
-                            Ver repositorio <span>↗</span>
-                        </a>
-                    </div>
-                </article>
-
-            </div>
-        </section>
-
-        <!-- Habilidades -->
-        <section class="section skills" id="habilidades">
-            <div class="section-heading">
-                <p class="eyebrow">03 — TECNOLOGÍAS</p>
-                <h2>Herramientas para<br>
-                    <span class="gradient-text">hacerlo posible.</span>
-                </h2>
-            </div>
-
-            <div class="skills-container">
-                <span class="skill-chip"><span>☕</span> Java</span>
-                <span class="skill-chip"><span>◈</span> Spring Boot</span>
-                <span class="skill-chip"><span>▤</span> MySQL</span>
-                <span class="skill-chip"><span>⌘</span> Git & GitHub</span>
-                <span class="skill-chip"><span>◇</span> HTML5</span>
-                <span class="skill-chip"><span>✳</span> CSS3</span>
-                <span class="skill-chip"><span>⌁</span> REST APIs</span>
-                <span class="skill-chip"><span>✧</span> Inteligencia artificial</span>
-            </div>
-
-            <p class="skills-note">
-                Siempre explorando nuevas tecnologías y mejores prácticas.
-            </p>
-        </section>
-
-        <!-- Contacto -->
-        <section class="section contact" id="contacto">
-            <div class="contact-card">
-                <p class="eyebrow">04 — CONTACTO</p>
-
-                <h2>¿Y si creamos algo<br>
-                    <span class="gradient-text">extraordinario?</span>
-                </h2>
-
-                <p>
-                    Estoy abierto a conectar, compartir ideas y colaborar
-                    en proyectos que generen impacto.
-                </p>
-
-                <div class="contact-actions">
-                    <a href="mailto:tu.correo@ejemplo.com"
-                       class="button button-primary">
-                        Escríbeme un correo <span>↗</span>
-                    </a>
-
-                    <a
-                        class="cv-download-button"
-                        href="https://docs.google.com/document/d/1tXY-Adpl7_IadETosinYbXz3iWbTWATl/edit?usp=sharing&amp;ouid=112992320391678261462&amp;rtpof=true&amp;sd=true"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <span aria-hidden="true">↓</span>
-                        Descargar CV
-                    </a>
-                </div>
-
-                <div class="social-links">
-                    <a href="https://github.com/juanda2210" target="_blank"
-                       rel="noopener noreferrer">GitHub ↗</a>
-
-                    <a href="https://www.linkedin.com/in/juan-david-arias-patiño-708a29262/?isSelfProfile=true" target="_blank"
-                       rel="noopener noreferrer">LinkedIn ↗</a>
-                </div>
-
-                <!-- Video: solo carga el reproductor cuando el usuario hace clic -->
-                <div class="contact-video">
-                    <p class="video-eyebrow">CONOCE MÁS SOBRE MÍ</p>
-                    <h3>Un poco más de mi historia</h3>
-                    <p class="video-description">
-                        Descubre más sobre mí a través de este video.
-                    </p>
-
-                    <div class="video-container" id="video-container">
-                        <button
-                            class="video-play-button"
-                            id="play-video"
-                            type="button"
-                            aria-label="Reproducir video de YouTube"
-                        >
-                            <img
-                                src="https://img.youtube.com/vi/oM90N-aqbeo/hqdefault.jpg"
-                                alt="Vista previa del video de YouTube"
-                                class="video-thumbnail"
-                            />
-                            <span class="play-icon" aria-hidden="true">▶</span>
-                            <span class="video-label">Ver video</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Pie de página -->
-    <footer class="footer">
-        <a href="#inicio" class="logo">APEX<span>22</span><span class="logo-dot">.</span></a>
-
-        <p>Diseñado con intención. Construido con código.</p>
-
-        <span>© 2026 APEX22</span>
-    </footer>
-
-
-    <script>
-        // El reproductor de YouTube solo se crea cuando la persona hace clic.
-        const playButton = document.getElementById("play-video");
-        const videoContainer = document.getElementById("video-container");
-
-        playButton.addEventListener("click", () => {
-            const iframe = document.createElement("iframe");
-            iframe.src = "https://www.youtube-nocookie.com/embed/oM90N-aqbeo?autoplay=1&rel=0";
-            iframe.title = "Video de presentación";
-            iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-            iframe.allowFullscreen = true;
-            iframe.referrerPolicy = "strict-origin-when-cross-origin";
-            videoContainer.replaceChildren(iframe);
-        });
-    </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
